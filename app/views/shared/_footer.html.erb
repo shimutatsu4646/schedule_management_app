@@ -1,0 +1,8 @@
+<div class="layout footer">
+  <h2>
+  <%= "現在の日時：#{Time.current.to_s(:y_datetime_jp)}" %>
+  <% if @schedules %>
+    <%= "スケジュール合計：#{@schedules.count}" %>
+  <% end %>
+  </h1>
+</div>
