@@ -14,7 +14,7 @@ class SchedulesController < ApplicationController
   def create
     @schedule = Schedule.new(schedule_params)
     if @schedule.save
-      flash[:notice] = "スケジュールを作成しました"
+      flash[:notice] = "スケジュールを新規作成しました"
       redirect_to :schedules
     else 
       flash.now[:alert] = "スケジュールを作成できませんでした"
