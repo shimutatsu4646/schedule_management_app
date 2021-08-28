@@ -46,6 +46,6 @@ class SchedulesController < ApplicationController
   
   private
   def schedule_params
-    params.require(:schedule).permit(:title, :start, :end, :all_day, :memo)
+    params.require(:schedule).permit(:title, :priority, :start, :end, :all_day, :memo)
   end
 end

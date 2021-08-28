@@ -10,6 +10,14 @@
       <td><%= f.text_field :title %></td>
     </tr>
     <tr>
+      <th><%= f.label :priority, "優先度" %></th>
+      <td>
+        <%= f.radio_button :priority, "高" %>高
+        <%= f.radio_button :priority, "中" %>中
+        <%= f.radio_button :priority, "低", checked: true %>低
+      </td>
+    </tr>
+    <tr>
       <th><%= f.label :start, "開始日" %></th>
       <td><%= f.datetime_field :start %></td>
     </tr>
@@ -19,12 +27,11 @@
     </tr>
     <tr>
       <th><%= f.label :all_day, "終日" %></th>
-      <td><%= f.check_box :all_day %></td>
-      <!--f.check_box :all_day ,{}, "true", "false"-->
+      <td><%= f.check_box :all_day %>終日の場合はチェックを入れます</td>
     </tr>
     <tr>
       <th><%= f.label :memo, "スケジュールメモ" %></th>
-      <td><%= f.text_area :memo %></td>
+      <td><%= f.text_area :memo, size: "30x6" %></td>
     </tr>
   </table>
   
