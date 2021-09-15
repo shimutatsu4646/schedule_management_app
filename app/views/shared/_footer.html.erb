@@ -1,0 +1,8 @@
+<footer>
+  <h1>
+  <%= "現在の日時：#{Time.current.to_s(:y_datetime_jp)}" %>
+  <% if @schedules %>
+    <span><%= "スケジュール合計：#{@schedules.count}" %></span>
+  <% end %>
+  </h1>
+</footer>

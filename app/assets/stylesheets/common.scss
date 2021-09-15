@@ -1,0 +1,57 @@
+html, body {
+  margin: 0;
+}
+
+header, footer {
+  padding: 10px;
+  background: #aa0000;
+  color: white;
+  margin: 0px;
+}
+
+h1 span {
+    white-space: nowrap;
+  }
+
+.main_container {
+  margin: 50px 15px;
+}
+
+table {
+  text-align: center;
+  border-collapse: collapse;
+  
+  th {
+    padding: 10px 20px;
+    background-color: #ffdfdf;
+    border: solid 1px black;
+  }
+  td {
+    padding: 10px 20px;
+    background-color: #f1c8c861;
+    border: solid 1px black;
+  }
+}
+
+.error {
+  display: inline-block;
+  border-bottom: solid 2px red;
+}
+
+@mixin flash{
+  padding: 15px;
+  width: 400px;
+  text-align: center;
+}
+
+.flash_alert {
+  @include flash
+  background-color: #ffb6c1;
+  border: 2px solid #ec7592;
+}
+
+.flash_notice {
+  @include flash
+  background-color: #7fffd4;
+  border: 2px solid #008000;
+}

@@ -1,0 +1,43 @@
+<h2>スケジュール編集</h2>
+
+<%= render "shared/flash" %>
+<%= render "shared/error_message", obj:@schedule %>
+
+<%= form_with model: @schedule do |f| %>
+  <table>
+    <tr>
+      <th><%= f.label :title, "タイトル" %></th>
+      <td><%= f.text_field :title %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :priority, "優先度" %></th>
+      <td>
+        <%= f.radio_button :priority, "高" %>高
+        <%= f.radio_button :priority, "中" %>中
+        <%= f.radio_button :priority, "低", checked: true %>低
+      </td>
+    </tr>
+    <tr>
+      <th><%= f.label :start, "開始日時" %></th>
+      <td><%= f.datetime_field :start %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :end, "終了日時" %></th>
+      <td><%= f.datetime_field :end %></td>
+    </tr>
+    <tr>
+      <th><%= f.label :all_day, "終日" %></th>
+      <td><%= f.check_box :all_day %>終日の場合はチェックを入れます</td>
+    </tr>    
+    <tr>
+      <th><%= f.label :memo, "スケジュールメモ" %></th>
+      <td><%= f.text_area :memo, size: "30x6" %></td>
+    </tr>
+  </table>
+  <div>
+    <ul>
+      <li><%= f.submit "スケジュールの編集を完了する" %></li>
+      <li><%= link_to "スケジュール一覧に戻る", :schedules %></li>
+    </ul>
+  </div>
+<% end %>
